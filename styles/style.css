@@ -1,0 +1,283 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+button,
+summary {
+  cursor: pointer;
+}
+
+
+
+/*************************
+  **************************
+  **************************
+      HEADER, NAV & FOOTER  
+  **************************
+  **************************
+  *************************/
+
+
+/**************************
+    STYLING GEHELE PAGINA  
+  **************************/
+
+body {
+
+  color: var(--color-text);
+  background-color: white;
+  width: 100vw;
+
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+
+  /* vw is van width van gehele scherm - maakt responsive */
+
+}
+
+
+/*****************
+   NAVIGATIE STYLEN
+  ******************/
+
+
+
+/* NAV STYLING MENU */
+
+header {
+
+  display: flex;
+  width: 100%;
+  height: 5em;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed ;
+
+  top: 0;
+
+  background-color: white;
+  z-index: 100;
+
+}
+
+/* H1 LOGO NAV STYLING*/
+
+header h1 a img {
+
+  width: 7em;
+  height: auto;
+
+}
+header h1 a {
+
+  display: block;
+}
+
+
+header nav {
+
+
+  background-color: #f3f3f3;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  z-index: 100;
+  transform: translateX(-100%);
+  /*helemaal uit beeld*/
+  transition: 1s;
+
+}
+
+header nav.open {
+
+  transform: translateX(0%);
+  /* weer in beeld terug */
+
+
+}
+
+header nav ul {
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  font-size: 1em;
+  font-weight: 700;
+}
+
+
+header nav ul li a {
+  color: #452422;
+  text-decoration: none;
+  text-transform: uppercase;
+
+
+}
+
+
+
+/* HAMBURGER EN ZOEK MENU STYLING */
+
+header>button {
+
+  border: none;
+  background: none;
+  width: 5em;
+  height: 4em;
+
+}
+
+
+header>button img {
+
+  width: 4em;
+  height: 4em;
+}
+
+
+header>button:nth-of-type(2) {
+
+  display: none;
+}
+
+/* hamburger menu list open */
+
+header nav ul li {
+
+  width: 100%;
+  height: 3em;
+  background-color: white;
+  padding-left: 1em;
+  border-top: solid 0.1em lightgray;
+  padding: 1em;
+
+
+}
+
+header nav ul li:nth-of-type(6) {
+
+  border-top: solid 0.7em #f3f3f3;
+
+}
+
+
+
+
+/********************
+    FOOTER STYLEN 
+********************/
+
+
+footer {
+
+  background-color: #f3f3f3;
+
+}
+
+footer section {
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer section h2 {
+
+  /* text-align: center; */
+  font-family: Arial, Helvetica, sans-serif;
+  color: #452422;
+  margin: .5em;
+}
+
+footer section a {
+
+  color: #452422;
+  font-size: 0.8em;
+  font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+
+footer section p {
+
+  /* text-align: center; */
+  color: darkgray;
+}
+
+
+footer section ul {
+
+  list-style: none;
+  display: flex;
+  gap: .3em;
+  margin: 0;
+  padding: 0;
+
+
+}
+
+footer section ul li {
+
+  background-color: purple;
+  height: 2em;
+  width: 2em;
+
+
+}
+
+footer section ul li a {
+
+  display: block;
+  width: 100%;
+}
+
+footer section ul li a img {
+
+display: block;
+width: 100%;
+}
+/* form  */
+
+footer section:last-of-type {
+
+  padding: 1.5em ;
+}
+
+footer section:last-of-type form{
+ 
+  display: flex;
+}
+
+
+footer form input[type=email] {
+
+  background-color: transparent;
+  border-style: solid;
+  border-color: lightgray;
+  font-size: 1em;
+  height: 2em;
+}
+
+
+
+footer form input[type=submit] {
+
+  background-color: #452422;
+  color: white;
+  font-size: 1em;
+  text-transform: uppercase;
+  height: 2em;
+
+}

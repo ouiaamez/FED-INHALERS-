@@ -1,0 +1,294 @@
+/*************************
+   HEADER IMG SLIDER STYLING
+  **************************/
+
+/*Code voor slider heb ik via w3schools.com https://www.w3schools.com/howto/howto_js_slideshow.asp* , 
+  ik begrijp hem niet helemaal, heb hem wel een beetje aangepast en onderdelen weggelaten die ik niet nodig heb*/
+
+
+* {
+  box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  margin-top: 5em ;
+  height: 19em;
+
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -60px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* de slides */
+/* Hide the images by default */
+.mySlides {
+  display: block;
+  position: relative;
+
+
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* Sanne geholpen  */
+main section ul li div {
+  display: grid;
+  /* grid-template-rows: 1fr min-content max-content; */
+  grid-template-rows: 1fr 3em max-content;
+}
+
+
+/* test onder slider  */
+/* h2 op afbeelding plaatsen */
+
+main section ul li div h2 span {
+
+  display: block;
+  padding-left: 1rem;
+}
+
+main section ul li div h2 {
+
+
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  z-index: 50;
+  align-self: flex-end;
+
+}
+
+/* a link decoratie en plaatsing */
+
+main section ul li div a {
+
+  display: block;
+  background-color: red;
+  width: fit-content;
+  height: 2em;
+  text-align: row center;
+  color: white;
+  font-size: 1.2em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+
+
+
+}
+
+main section ul li div a {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  z-index: 50;
+
+  padding: 0.5em;
+  position: relative;
+  left: 1rem;
+
+
+
+
+}
+
+
+/* p deco en plaatsing */
+
+main section ul li div p {
+  padding-left: 1em;
+  padding-top: 1em;
+  color: #452422;
+  font-weight: bold;
+  margin: 0;
+  text-align: left center;
+
+  grid-column-start: 1;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  z-index: 50;
+}
+
+main section ul li div img {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+  display: block;
+  width: 100%;
+}
+
+
+/***********************
+UL LIST STYLING ONDERWERPEN
+************************/
+
+main > ul {
+width: 100%;
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2em;
+
+
+}
+
+main > ul li {
+
+  height: 20em;
+  width: inherit;
+  display: grid;
+  grid-template-rows: 14em 1fr 1fr ;
+
+  position: relative;
+  justify-items: center;
+  row-gap: 1em;
+
+}
+
+
+main > ul li img {
+
+  display: block;
+  width: 95%;
+
+  grid-row-start: 1;
+  grid-row-end: 2;
+  
+  /* border-left: solid 1em white;
+  border-right: solid 1em white; */
+
+  
+}
+
+
+/* a link decoratie */
+
+main > ul li a {
+
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: red;
+  color: white;
+
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: fit-content;
+  padding: .5em;
+
+
+  /* blokje word even groot als content */
+  
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+
+ 
+}
+
+main > ul li:nth-of-type(3) a {
+
+  background-color: #452422;
+
+}
+
+
+main > ul li:nth-of-type(5) a {
+
+  background-color: orange;
+
+}
+
+main > ul li:nth-of-type(6) a {
+
+  background-color: hotpink;
+
+}
+
+
+
+
+
+/* tekst */
+
+main > ul li h2 {
+
+  color: #452422;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin: 0;
+  
+
+
+}
+
+main > ul li p {
+
+  color: #717171;
+  text-align: center;
+  margin: 0;
+}
+
+
