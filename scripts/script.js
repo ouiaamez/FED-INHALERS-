@@ -17,23 +17,3 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";
   setTimeout(showSlides, 4000); // verander om de 4 seconden
 }
-
-
-
-
-
-// hamburger menu open dicht// 
-
-
-var menuButton = document.querySelector("header > button:nth-of-type(1)"); 
-
-menuButton.addEventListener("click", toggleMenu); 
-
-function toggleMenu(){
-
-    var deNav = document.querySelector("header nav"); 
-
-    deNav.classList.toggle("open");
-    
-}
-

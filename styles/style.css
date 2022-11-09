@@ -14,14 +14,75 @@ summary {
 
 
 
-/*************************
-  **************************
-  **************************
-      HEADER, NAV & FOOTER  
-  **************************
-  **************************
-  *************************/
+/***********************
+  HEADER, NAV & FOOTER  
+  **********************/
 
+
+/* custom properties kleuren */
+
+:root {
+
+  --color-white: white;
+  --color-coffeebrown: #290201;
+  --color-tekstgrey: #6f6464;
+  --color-achtergrondk: #f3f3f3;
+  --color-borderkleur: lightgrey;
+  --color-buttonborder: #717171;
+
+
+}
+
+/* darkmode  */
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+
+    --color-white: rgb(5, 5, 5);
+    --color-coffeebrown: #ffffff;
+    --color-tekstgrey: #6f6464;
+
+
+  }
+
+  body header,
+  footer form input[type=submit] {
+    --color-white: white;
+
+
+  }
+
+  body header nav ul li,
+  body footer {
+
+    --color-coffeebrown: #290201;
+  }
+
+}
+
+/* halloween theme  */
+
+body.halloween {
+  --color-white: rgb(2, 2, 2);
+  --color-coffeebrown: orange;
+  --color-tekstgrey: #6f6464;
+  --color-achtergrondk: #e98808;
+
+}
+
+body.halloween header,
+body.halloween footer form input[type=submit] {
+  --color-white: white;
+
+
+}
+
+body.halloween footer {
+
+  --color-achtergrondk: #f3f3f3;
+
+}
 
 /**************************
     STYLING GEHELE PAGINA  
@@ -30,14 +91,10 @@ summary {
 body {
 
   color: var(--color-text);
-  background-color: white;
-  width: 100vw;
+  background-color: var(--color-white);
 
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-
-
-  /* vw is van width van gehele scherm - maakt responsive */
 
 }
 
@@ -54,14 +111,16 @@ header {
 
   display: flex;
   width: 100%;
-  height: 5em;
+  height: 3em;
   justify-content: space-between;
   align-items: center;
-  position: fixed ;
+  position: fixed;
 
   top: 0;
+  left: 0;
+  right: 0;
 
-  background-color: white;
+  background-color: var(--color-white);
   z-index: 100;
 
 }
@@ -70,10 +129,14 @@ header {
 
 header h1 a img {
 
-  width: 7em;
+  width: 5em;
   height: auto;
+  margin-top: 0.3em;
+  padding-left: 0.5em;
+
 
 }
+
 header h1 a {
 
   display: block;
@@ -83,7 +146,7 @@ header h1 a {
 header nav {
 
 
-  background-color: #f3f3f3;
+  background-color: var(--color-achtergrondk);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -104,6 +167,16 @@ header nav.open {
 
 }
 
+header nav input {
+
+  height: 3em;
+  width: 100%;
+
+  border: solid 0.5em var(--color-achtergrondk);
+
+
+}
+
 header nav ul {
 
   list-style: none;
@@ -115,12 +188,67 @@ header nav ul {
 }
 
 
+header nav ul li {
+
+  width: 100%;
+  height: 3em;
+  background-color: var(--color-white);
+  padding-left: 1em;
+  border-top: solid 0.1em var(--color-borderkleur);
+  padding: 1em;
+
+
+}
+
+
 header nav ul li a {
-  color: #452422;
+  color: var(--color-coffeebrown);
   text-decoration: none;
   text-transform: uppercase;
 
 
+}
+
+header nav ul li:last-of-type {
+
+  border-top: solid 0.7em var(--color-achtergrondk);
+
+}
+
+
+
+header nav ul li:last-of-type div {
+  display: flex;
+  flex-direction: column;
+  width: 9em;
+}
+
+header nav ul li:last-of-type div a {
+
+  width: 5em;
+}
+
+/* zoek icon button */
+
+header nav ul li:last-of-type div button:first-of-type {
+  display: none;
+}
+
+/* halloween icon button */
+header nav ul li:last-of-type div button:last-of-type {
+
+  width: 5em;
+  height: 3em;
+  padding: 0;
+  border: none;
+  background: none;
+
+}
+
+/* icoon halloween */
+header nav ul li:last-of-type div button:last-of-type img {
+  width: 80%;
+  object-fit: cover;
 }
 
 
@@ -137,39 +265,59 @@ header>button {
 }
 
 
-header>button img {
+header>button:first-of-type img {
 
-  width: 4em;
-  height: 4em;
+  width: 3em;
+  height: 3em;
 }
 
 
-header>button:nth-of-type(2) {
 
-  display: none;
-}
+/**********************
+   BACK TO TOP BUTTON
+***********************/
 
-/* hamburger menu list open */
 
-header nav ul li {
+body main>button {
+
+  background-color: var(--color-white);
+  border: none;
+  border-top: solid 0.1em var(--color-buttonborder);
+  border-bottom: solid 0.1em var(--color-buttonborder);
 
   width: 100%;
-  height: 3em;
-  background-color: white;
-  padding-left: 1em;
-  border-top: solid 0.1em lightgray;
-  padding: 1em;
-
-
-}
-
-header nav ul li:nth-of-type(6) {
-
-  border-top: solid 0.7em #f3f3f3;
+  height: 4em;
 
 }
 
 
+body main>button>a {
+
+
+  text-decoration: none;
+  color: var(--color-coffeebrown);
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+
+}
+
+/* after is kind van de a  */
+body main>button>a::after {
+
+  content: "^";
+  display: block;
+  color: var(--color-coffeebrown);
+  font-size: 2em;
+  position: absolute;
+  font-weight: lighter;
+
+  right: -1em;
+  bottom: -0.5em;
+  transform: scaleX(1.4);
+  /* skew verandert size vanaf 1 is normaal onder is kleiner  */
+
+}
 
 
 /********************
@@ -179,7 +327,11 @@ header nav ul li:nth-of-type(6) {
 
 footer {
 
-  background-color: #f3f3f3;
+
+  background-color: var(--color-achtergrondk);
+  display: flex;
+  justify-content: space-around;
+
 
 }
 
@@ -196,13 +348,13 @@ footer section h2 {
 
   /* text-align: center; */
   font-family: Arial, Helvetica, sans-serif;
-  color: #452422;
+  color: var(--color-coffeebrown);
   margin: .5em;
 }
 
 footer section a {
 
-  color: #452422;
+  color: var(--color-coffeebrown);
   font-size: 0.8em;
   font-family: Arial, Helvetica, sans-serif;
 
@@ -213,7 +365,7 @@ footer section a {
 footer section p {
 
   /* text-align: center; */
-  color: darkgray;
+  color: var(--color-coffeebrown);
 }
 
 
@@ -230,7 +382,6 @@ footer section ul {
 
 footer section ul li {
 
-  background-color: purple;
   height: 2em;
   width: 2em;
 
@@ -245,19 +396,17 @@ footer section ul li a {
 
 footer section ul li a img {
 
-display: block;
-width: 100%;
+  display: block;
+  width: 100%;
 }
+
 /* form  */
 
-footer section:last-of-type {
 
-  padding: 1.5em ;
-}
+footer section:last-of-type form {
 
-footer section:last-of-type form{
- 
   display: flex;
+  margin-top: 1em;
 }
 
 
@@ -265,7 +414,7 @@ footer form input[type=email] {
 
   background-color: transparent;
   border-style: solid;
-  border-color: lightgray;
+  border-color: var(--color-borderkleur);
   font-size: 1em;
   height: 2em;
 }
@@ -274,10 +423,127 @@ footer form input[type=email] {
 
 footer form input[type=submit] {
 
-  background-color: #452422;
-  color: white;
+  background-color: var(--color-coffeebrown);
+  color: var(--color-white);
   font-size: 1em;
   text-transform: uppercase;
   height: 2em;
 
+}
+
+@media (min-width: 23em) {
+
+
+  footer {
+
+    flex-wrap: wrap;
+    flex-direction: row;
+
+  }
+
+
+
+}
+
+
+
+@media (min-width: 70em) {
+
+
+  header {
+
+    height: 5em;
+
+  }
+
+  header>button {
+
+    display: none;
+  }
+
+  header nav {
+
+    transform: translateX(0%);
+
+    background-color: transparent;
+
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    padding: 1em;
+    height: inherit;
+    position: relative;
+    /* inherit is pak de styling van de vader */
+    /* relative = google  */
+
+  }
+
+  header nav input {
+
+    display: none;
+  }
+
+  header nav ul {
+
+    display: flex;
+    width: 100%;
+    height: inherit;
+    position: relative;
+
+
+  }
+
+  header nav ul li {
+
+    background-color: transparent;
+    border: none;
+    width: max-content;
+
+
+  }
+
+  header nav ul li:last-of-type {
+
+    border-top: none;
+    padding: 0;
+    width: 7em;
+    margin-left: 4em;
+  }
+
+  header nav ul li:last-of-type div {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 0.3em;
+  }
+
+  header nav ul li:last-of-type div button:first-of-type {
+
+    display: block;
+    width: 3em;
+    height: 3em;
+    padding: 0;
+
+    border: none;
+    background: none;
+
+  }
+
+  header nav ul li:last-of-type div button:first-of-type img {
+    width: inherit;
+    height: inherit;
+  }
+
+
+  header nav ul li a:hover {
+
+    text-decoration: underline var(--color-coffeebrown);
+
+  }
+
+  main>ul {
+
+    margin-top: 3em;
+  }
 }

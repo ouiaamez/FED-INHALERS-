@@ -1,0 +1,337 @@
+/**********************************
+   MAIN - BARISTA WORDEN -  STYLING
+  *********************************/
+
+/* reset pagina  */
+
+body {
+
+    margin: 0;
+
+}
+
+
+/* custom properties kleuren */
+
+:root {
+
+    --color-white: white;
+    --color-coffeebrown: #290201;
+    --color-tekstgrey: #6f6464;
+    --color-formkleur: #f3f3f3;
+    --color-bordersolid: black;
+
+
+
+}
+
+/* darkmode  */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+
+        --color-white: rgb(5, 5, 5);
+        --color-coffeebrown: #eeeeee;
+        --color-tekstgrey: #5b5959;
+
+    }
+
+    body main>div h2 {
+
+
+        --color-white: white;
+
+    }
+
+
+    body main section h2,
+    body main section form label {
+
+        --color-coffeebrown: #290201;
+
+    }
+
+
+    body main section:nth-of-type(2) p>a {
+
+        --color-coffeebrown: #290201;
+
+    }
+
+    body main section:nth-of-type(2) form input[type=submit] {
+
+        --color-white: white;
+
+    }
+
+    body main section:nth-of-type(2) form input[type=submit] {
+
+        --color-coffeebrown: #290201;
+
+    }
+
+
+
+
+}
+
+/* halloween theme  */
+
+body.halloween {
+    --color-white: rgb(2, 2, 2);
+    --color-coffeebrown: orange;
+    --color-tekstgrey: #6f6464;
+    --color-achtergrondk: #e98808;
+
+}
+
+
+body.halloween main>div h2 {
+
+    --color-white: white;
+}
+
+
+
+/* div en img erin */
+
+body main div {
+    position: relative;
+    margin-top: 3em;
+    width: 100%;
+    height: 14em;
+
+
+    background-image: url("../images/baristawordenklaar.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* h2 boven img  */
+
+body main>div h2 {
+    position: absolute;
+    bottom: 0em;
+    left: 10%;
+    font-size: 2em;
+    font-family: gotham, helvetica, sans-serif;
+    color: var(--color-white);
+
+}
+
+/**********
+ SECTION 1
+***********/
+
+
+body main section {
+
+    width: 80%;
+    margin-left: 11%;
+
+}
+
+body main section h3 {
+
+    color: var(--color-coffeebrown);
+    font-family: gotham, helvetica, sans-serif;
+    font-size: 1.5em;
+
+}
+
+body main section:nth-of-type(1) p {
+
+
+    color: var(--color-tekstgrey);
+    font-size: 1.3em;
+    font-family: dolly, times new roman, serif;
+    word-spacing: 0.05em;
+
+}
+
+body main section p>span {
+
+    display: block;
+    margin-bottom: 2em;
+}
+
+
+/* *********************
+      FORM STYLING 
+************************/
+
+body main section:nth-of-type(2) {
+
+    background-color: var(--color-formkleur);
+
+
+}
+
+body main section h2 {
+
+
+    text-transform: uppercase;
+    color: var(--color-coffeebrown);
+    font-size: 1em;
+    font-family: gotham, helvetica, sans-serif;
+    font-weight: bold;
+    padding-left: 2em;
+    margin-bottom: 1em;
+    padding-top: 2em;
+
+
+}
+
+
+body main section form {
+
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+body main section form:nth-of-type(1)>p {
+
+    color: var(--color-tekstgrey);
+    font-size: 1em;
+    font-family: dolly, times new roman, serif;
+    width: 90%;
+
+
+
+}
+
+body main section form label {
+
+    margin-top: 1em;
+    width: 90%;
+    color: var(--color-coffeebrown);
+    font-family: gotham, helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 0.9em;
+
+}
+
+body main section form input {
+
+
+    display: block;
+    border: solid 0.05em var(--color-bordersolid);
+    width: 90%;
+    height: 2.5em;
+    align-self: center;
+    margin: 1em;
+
+
+
+}
+
+input::placeholder {
+
+    font-weight: 600;
+    font-size: 1.2em;
+    color: var(--color-tekstgrey);
+    padding-left: 0.5em;
+    opacity: 45%;
+}
+
+
+body main section:nth-of-type(2) form select {
+
+
+    width: 90%;
+    height: 2.5em;
+
+
+}
+
+
+body main section form textarea {
+
+    width: 90%;
+    margin: 1em;
+    margin-bottom: 0;
+    align-self: center;
+    font-weight: 600;
+    font-size: 1.35em;
+    color: var(--color-tekstgrey);
+    opacity: 45%;
+
+
+}
+
+
+/* input submit styling  */
+
+body main section:nth-of-type(2) form input[type=submit] {
+
+    width: 8em;
+    height: 2em;
+
+    background-color: var(--color-coffeebrown);
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-size: 1em;
+
+    display: flex;
+    justify-content: center;
+    align-self: baseline;
+}
+
+
+/* tekst onder formulier */
+
+
+body main section:nth-of-type(2) p>a {
+
+
+    color: var(--color-coffeebrown);
+}
+
+body main section:nth-of-type(2)>p {
+
+    color: var(--color-tekstgrey);
+    font-size: 1em;
+    font-family: dolly, times new roman, serif;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 2em;
+    padding-left: 2em;
+    padding-right: 1em;
+}
+
+main>button {
+    margin-top: 1em;
+}
+
+
+/* grotere schermen vanaf ipad */
+
+@media (min-width: 24em) {
+
+    body main div {
+
+        height: 33em;
+    }
+
+    body main>div h2 {
+
+        font-size: 4em;
+
+    }
+
+    body main section {
+        width: 70%;
+        margin-left: 11%;
+
+    }
+
+
+
+}

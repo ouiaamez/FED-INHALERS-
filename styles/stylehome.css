@@ -1,6 +1,76 @@
+/***************************
+   MAIN - HOMEPAGE STYLING
+  **************************/
+
+
+
+/* custom properties kleuren */
+
+:root {
+
+  --color-white: white;
+  --color-coffeebrown: #290201;
+  --color-tekstgrey: #6f6464;
+  --color-kopjerood: rgb(233, 37, 37);
+  --color-kopjeoranje: orange;
+  --color-sliderhover: #717171;
+
+
+}
+
+/* darkmode  */
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+
+    --color-white: rgb(5, 5, 5);
+    --color-coffeebrown: #ffffff;
+    --color-tekstgrey: #716f6f;
+
+  }
+
+
+  body main section ul li div h2,
+  body main section ul li div p {
+
+    --color-white: white;
+
+
+  }
+
+}
+
+/* halloween theme  */
+
+body.halloween {
+  --color-white: rgb(2, 2, 2);
+  --color-coffeebrown: orange;
+  --color-tekstgrey: orange;
+  --color-kopjerood: orange;
+
+}
+
+
+body.halloween main section ul li div h2,
+body.halloween main section ul li div p {
+
+  --color-white: white;
+
+
+}
+
+body.halloween footer section p {
+
+  --color-kopjeoranje: orange;
+
+}
+
+
 /*************************
    HEADER IMG SLIDER STYLING
   **************************/
+
 
 /*Code voor slider heb ik via w3schools.com https://www.w3schools.com/howto/howto_js_slideshow.asp* , 
   ik begrijp hem niet helemaal, heb hem wel een beetje aangepast en onderdelen weggelaten die ik niet nodig heb*/
@@ -17,14 +87,16 @@
   margin: 0 auto;
   padding: 0;
   list-style: none;
-  margin-top: 5em ;
-  height: 19em;
+  margin-top: 5em;
+  height: 100%;
+
 
 }
 
+
 .active,
 .dot:hover {
-  background-color: #717171;
+  background-color: var(--color-sliderhover);
 }
 
 
@@ -37,7 +109,7 @@
   width: auto;
   margin-top: -60px;
   padding: 16px;
-  color: white;
+  color: var(--color-white);
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -83,15 +155,15 @@
   }
 }
 
-/* Sanne geholpen  */
+/* Sanne heeft geholpen  */
 main section ul li div {
   display: grid;
-  /* grid-template-rows: 1fr min-content max-content; */
-  grid-template-rows: 1fr 3em max-content;
+  grid-template-rows: 9em 3em 6em;
+  overflow: hidden;
 }
 
 
-/* test onder slider  */
+
 /* h2 op afbeelding plaatsen */
 
 main section ul li div h2 span {
@@ -103,7 +175,7 @@ main section ul li div h2 span {
 main section ul li div h2 {
 
 
-  color: white;
+  color: var(--color-white);
   font-size: 2em;
   font-weight: bold;
   margin: 0;
@@ -117,16 +189,29 @@ main section ul li div h2 {
 
 }
 
-/* a link decoratie en plaatsing */
+/* img positie  */
+
+main section ul li div img {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+  display: block;
+  height: 100%;
+
+}
+
+
+/* a link - soliciteren -  decoratie en plaatsing */
 
 main section ul li div a {
 
   display: block;
-  background-color: red;
+  background-color: var(--color-kopjerood);
   width: fit-content;
   height: 2em;
   text-align: row center;
-  color: white;
+  color: var(--color-white);
   font-size: 1.2em;
 
   text-decoration: none;
@@ -154,12 +239,12 @@ main section ul li div a {
 }
 
 
-/* p deco en plaatsing */
+/* p - tekst onder slider styling/plaatsing */
 
 main section ul li div p {
   padding-left: 1em;
   padding-top: 1em;
-  color: #452422;
+  color: var(--color-coffeebrown);
   font-weight: bold;
   margin: 0;
   text-align: left center;
@@ -170,37 +255,31 @@ main section ul li div p {
   z-index: 50;
 }
 
-main section ul li div img {
-  grid-column-start: 1;
-  grid-row-start: 1;
-  grid-row-end: 3;
 
-  display: block;
+
+/****************************
+ UL LIST STYLING ONDERWERPEN
+*****************************/
+
+main>ul {
   width: 100%;
-}
-
-
-/***********************
-UL LIST STYLING ONDERWERPEN
-************************/
-
-main > ul {
-width: 100%;
   list-style-type: none;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(23em, 25em));
   row-gap: 2em;
 
+  justify-content: center;
+  padding-bottom: 2em;
 
 }
 
-main > ul li {
+main>ul li {
 
   height: 20em;
-  width: inherit;
   display: grid;
-  grid-template-rows: 14em 1fr 1fr ;
+  grid-template-rows: 14em 1fr 1fr;
+
 
   position: relative;
   justify-items: center;
@@ -209,29 +288,33 @@ main > ul li {
 }
 
 
-main > ul li img {
+main>ul li img {
 
   display: block;
   width: 95%;
 
   grid-row-start: 1;
   grid-row-end: 2;
-  
-  /* border-left: solid 1em white;
-  border-right: solid 1em white; */
 
-  
+
 }
 
 
-/* a link decoratie */
+main>ul li img:hover {
 
-main > ul li a {
+  filter: blur(0.5em);
+
+}
+
+
+/* a - link categorien in ul styling met verschillende kleurtjes */
+
+main>ul li a {
 
   text-decoration: none;
   text-transform: uppercase;
-  background-color: red;
-  color: white;
+  background-color: var(--color-kopjerood);
+  color: var(--color-white);
 
   grid-row-start: 1;
   grid-row-end: 2;
@@ -239,56 +322,159 @@ main > ul li a {
   padding: .5em;
 
 
+
   /* blokje word even groot als content */
-  
+
   position: absolute;
   justify-self: center;
   align-self: center;
 
- 
-}
-
-main > ul li:nth-of-type(3) a {
-
-  background-color: #452422;
 
 }
 
+/* hover kleur */
 
-main > ul li:nth-of-type(5) a {
+main>ul li a:hover {
 
-  background-color: orange;
-
-}
-
-main > ul li:nth-of-type(6) a {
-
-  background-color: hotpink;
+  background-color: var(--color-kopjeoranje);
 
 }
 
+/* aantal kopjes een andere kleur en hover eronder gelijk */
+
+main>ul li:nth-of-type(2) a {
+
+  background-color: var(--color-kopjeoranje);
+
+}
+
+main>ul li:nth-of-type(2) a:hover {
+
+  background-color: var(--color-kopjerood);
+
+}
+
+
+main>ul li:nth-of-type(4) a {
+
+  background-color: var(--color-kopjeoranje);
+
+}
+
+main>ul li:nth-of-type(4) a:hover {
+
+  background-color: var(--color-kopjeoranje);
+
+}
+
+main>ul li:nth-of-type(6) a {
+
+  background-color: var(--color-kopjeoranje);
+
+}
+
+main>ul li:nth-of-type(6) a:hover {
+
+  background-color: var(--color-kopjerood);
+
+}
 
 
 
+/* teksten van ul h2 en p */
 
-/* tekst */
+main>ul li h2 {
 
-main > ul li h2 {
-
-  color: #452422;
+  color: var(--color-coffeebrown);
   grid-row-start: 2;
   grid-row-end: 3;
   margin: 0;
-  
+
 
 
 }
 
-main > ul li p {
+main>ul li p {
 
-  color: #717171;
+  color: var(--color-coffeebrown);
   text-align: center;
   margin: 0;
 }
 
 
+
+/********************************* 
+VERANDEREN NAAR GROTERE SCHERMEN 
+**********************************/
+
+
+
+/* grote verandering start vanaf ipad size */
+
+@media (min-width: 24em) {
+
+  main section ul li div img {
+    width: 100%;
+    height: auto;
+    grid-row-end: 4;
+
+    object-position: top 3em;
+  }
+
+  main section ul li div a {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    align-self: center;
+  }
+
+  main section ul li div p {
+
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    color: var(--color-white);
+  }
+
+
+}
+
+/* verandering vanaf desktop size  */
+
+@media (min-width: 53em) {
+
+
+  body main>button {
+
+    display: none;
+
+  }
+
+
+  main section:first-of-type {
+
+    height: 23em;
+
+  }
+
+  main section:first-of-type ul {
+
+    height: inherit;
+
+  }
+
+
+  main section:first-of-type ul li {
+
+    height: inherit;
+
+  }
+
+  main section:first-of-type ul li div {
+
+    height: inherit;
+
+  }
+
+
+
+}
